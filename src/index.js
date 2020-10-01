@@ -1,24 +1,40 @@
+"use strict";
 
-export function min (array) {
-    if (array.length === 0 || array === undefined) {
-        return 0;
-    }
-    const sorted = array.sort((a, b) => a - b);
-    return sorted[0];
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.avg = exports.max = exports.min = void 0;
+
+const min = (array = 0) => {
+  if (array.length === 0 || array === 0) {
+    return 0;
+  }
+
+  const sorted = array.sort((a, b) => a - b);
+  return sorted[0];
 };
 
-export function max (array) {
-    if (array.length === 0 || array === undefined) {
-        return 0;
-    }
-    const sorted = array.sort((a, b) => b - a);
-    return sorted[0];
-}
+exports.min = min;
 
-export function avg (array) {
-    if (array.length === 0 || array === undefined) {
-        return 0;
-    }
-    const sum = array.reduce((item, acc) => acc + item, 0);
-    const average = sum / (array.length + 1);
+const max = (array = 0) => {
+  if (array.length === 0 || array === 0) {
+    return 0;
+  }
+
+  const sorted = array.sort((a, b) => b - a);
+  return sorted[0];
 };
+
+exports.max = max;
+
+const avg = (array = 0) => {
+  if (array.length === 0 || array === 0) {
+    return 0;
+  }
+
+  const sum = array.reduce((item, acc) => acc + item, 0);
+  const average = sum / (array.length);
+  return average;
+};
+
+exports.avg = avg;
